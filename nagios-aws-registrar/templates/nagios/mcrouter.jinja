@@ -16,7 +16,7 @@ define service{
     use                     generic-service
     host_name               {{ hostname }}
     service_description     Memcache 
-    check_command           check_tcp!11212
+    check_command           check_tcp!2222
 }
 
 define service{
@@ -79,5 +79,5 @@ define service{
     use                     generic-service
     host_name               {{ hostname }}
     service_description     MCRouter
-    check_command           check_tcp!11211
+    check_command           check_tcp!22122
 }
