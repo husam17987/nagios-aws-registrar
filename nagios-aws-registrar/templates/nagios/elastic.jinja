@@ -1,0 +1,96 @@
+define host{
+    use                     generic-host
+    host_name               {{ hostname }}
+    alias                   {{ hostname }}
+    address                 {{ instance_ip }}
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     PING
+    check_command           check-host-alive
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     Logstash
+    check_command           check_tcp!5044
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     CPU Load
+    check_command           check_nrpe_1arg!check_load
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     Users
+    check_command           check_nrpe_1arg!check_users
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     / Space
+    check_command           check_nrpe_1arg!check_disk1
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     /es data1
+    check_command           check_nrpe_1arg!check_disk2
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     /es data2
+    check_command           check_nrpe_1arg!check_disk3
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     /es data3
+    check_command           check_nrpe_1arg!check_disk4
+}
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     /es data4
+    check_command           check_nrpe_1arg!check_disk5
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     Zombie Process
+    check_command           check_nrpe_1arg!check_zombie_procs
+}
+
+define service{
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     Total Process
+    check_command           check_nrpe_1arg!check_total_procs
+}
+
+define service {
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     SSH
+    check_command           check_ssh_port!22192
+}
+
+define service {
+    use                     generic-service
+    host_name               {{ hostname }}
+    service_description     Elasticsearch
+    check_command           check_nrpe_1arg!check_elastic
+}
