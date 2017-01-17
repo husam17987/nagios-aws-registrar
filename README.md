@@ -1,2 +1,2 @@
 # nagios-aws-registrar
-Register Nagios Client Automatically with EC2
+Python Register Nagios Client Automatically with EC2
