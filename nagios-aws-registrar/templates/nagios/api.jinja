@@ -69,10 +69,4 @@ define service {
 }
 
 
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     API Search Functionality
-    check_command           check_nrpe_1arg!check_api_search
-}
 
