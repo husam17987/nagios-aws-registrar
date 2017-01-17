@@ -3,7 +3,7 @@ import requests, json, time
 import logging, jinja2, os
 
 TOKEN = "1234567890"
-NAGIOS_CFGS = '/etc/nagios3/servers.d'
+NAGIOS_CFGS = '/path/nagios/configfiles'
 NAGIOS_TEMPLATE = os.path.join(os.getcwd(), 'templates', 'nagios')
 TEMPLATELOADER = jinja2.FileSystemLoader(NAGIOS_TEMPLATE)
 TEMPLATEENV = jinja2.Environment(loader=TEMPLATELOADER)
@@ -42,4 +42,4 @@ def nagiosNew():
     
 
 
-run(host='localhost', port=4000, debug=True, reloader=True)
+run(host='localhost', port=8080, debug=True, reloader=True)
