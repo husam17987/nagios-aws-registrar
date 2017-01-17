@@ -17,7 +17,7 @@ define service{
     use                     generic-service
     host_name               {{ hostname }}
     service_description     Solr
-    check_command           check_tcp!8983
+    check_command           check_tcp!8999
 }
 
 define service{

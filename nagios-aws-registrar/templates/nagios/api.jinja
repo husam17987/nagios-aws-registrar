@@ -68,28 +68,6 @@ define service {
     check_command           check_ssh_port!22
 }
 
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     API Main Page
-    check_command           check_nrpe_1arg!check_api_main_page
-}
-
-
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     API Main Categories
-    check_command           check_nrpe_1arg!check_api_categories
-}
-
-#define service {
-#    use                     generic-service
-#    host_name               {{ hostname }}
-#    service_description     API Post view
-#    check_command           check_nrpe_1arg!check_api_post_view
-#}
-
 
 define service {
     use                     generic-service
@@ -98,77 +76,3 @@ define service {
     check_command           check_nrpe_1arg!check_api_search
 }
 
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     SSL Expiry
-    check_command           check_nrpe_1arg!check_ssl_expiry
-}
-
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     SSL Expiry CHAT
-    check_command           check_nrpe_1arg!check_ssl_expiry_chat
-}
-
-
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     SSL Expiry os-cdn
-    check_command           check_nrpe_1arg!check_ssl_os-cdn
-}
-
-
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     SSL Expiry on images.os-cdn.com
-    check_command           check_nrpe_1arg!check_ssl_os-cdn-images
-}
-
-
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     HaProxy
-    check_command           check_tcp!8000
-}
-
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     IR Service
-    check_command           check_tcp!8001
-}
-
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     IR Service 2
-    check_command           check_tcp!8002
-}
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     Search Post Result Listing
-    check_command           check_nrpe_1arg!get_result
-}
-
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     Search Post Result Listing1
-    check_command           check_nrpe_1arg!get_result1
-}
-
-
-define service {
-    use                     generic-service
-    host_name               {{ hostname }}
-    normal_check_interval           3
-    retry_check_interval            3
-    service_description     Redis Slave Status 
-    check_command           check_nrpe_1arg!check_redis_slave
-}

@@ -40,32 +40,6 @@ define service{
     check_command           check_nrpe_1arg!check_disk1
 }
 
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     /es data1
-    check_command           check_nrpe_1arg!check_disk2
-}
-
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     /es data2
-    check_command           check_nrpe_1arg!check_disk3
-}
-
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     /es data3
-    check_command           check_nrpe_1arg!check_disk4
-}
-define service{
-    use                     generic-service
-    host_name               {{ hostname }}
-    service_description     /es data4
-    check_command           check_nrpe_1arg!check_disk5
-}
 
 define service{
     use                     generic-service
@@ -85,7 +59,7 @@ define service {
     use                     generic-service
     host_name               {{ hostname }}
     service_description     SSH
-    check_command           check_ssh_port!22192
+    check_command           check_ssh_port!22
 }
 
 define service {
