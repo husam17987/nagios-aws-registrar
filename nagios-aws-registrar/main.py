@@ -2,7 +2,7 @@ from bottle import route, run, request,response
 import requests, json, time
 import logging, jinja2, os
 
-TOKEN = "8si9LCE7EpKpVbg2Ftnm6uA4Amfn8cIRO7UquIO9WWVOkcbhGN"
+TOKEN = "1234567890"
 NAGIOS_CFGS = '/etc/nagios3/servers.d'
 NAGIOS_TEMPLATE = os.path.join(os.getcwd(), 'templates', 'nagios')
 TEMPLATELOADER = jinja2.FileSystemLoader(NAGIOS_TEMPLATE)
