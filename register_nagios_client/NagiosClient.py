@@ -1,4 +1,4 @@
-import requests, json, re, logging, argparse
+import requests, json, logging, argparse
 
 
 EC2_METADATA = "http://169.254.169.254/latest"
